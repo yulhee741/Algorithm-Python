@@ -1,6 +1,7 @@
 # Algorithm-Python
 🛠 Python Algorithm Study 🛠
 
+![](http://mazassumnida.wtf/api/v2/generate_badge?boj=dbfgml741)
 
 #### 1. 문자열
 #### 2. 구현
