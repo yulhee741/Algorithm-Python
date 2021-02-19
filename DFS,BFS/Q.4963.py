@@ -1,31 +1,31 @@
-import sys
-input = sys.stdin.readline
+from sys import stdin
 
-dx = [1, -1, 0, 0, 1, 1, -1, -1]
-dy = [0, 0, 1, -1, 1, -1, 1, -1]
-
-def bfs(y, x, count):
-    q = [[y, x]]
-    while q:
-        now = q.pop(0)
-        for i in range(8):
-            ny = now[0] + dy[i]
-            nx = now[1] + dx[i]
-            if 0 <= nx < w and 0 <= ny < h and mat[ny][nx] == 1:
-                mat[ny][nx] = count
-                q.append([ny, nx])
+dx = [1, -1, 0, 0, 1, -1, 1, -1]
+dy = [0, 0, -1, 1, -1, -1, 1, 1]
+def bfs(i, j):
+    mat[i][j] = 0
+    queue = [[i, j]]
+    while queue:
+        a, b = queue[0][0], queue[0][1]
+        del queue[0]
+        for k in range(8):
+            x = a + dx[k]
+            y = b + dy[k]
+            if 0 <= x < h and 0 <= y < w and mat[x][y] == 1:
+                mat[x][y] = 0
+                queue.append([x, y])
 
 while True:
-    w, h = map(int, input().split())
+    w, h = map(int, stdin.readline().split())
     if w == 0 and h == 0:
         break
     mat = []
+    cnt = 0
     for i in range(h):
-        mat.append(list(map(int, input().split())))
-    count = 2
+        mat.append(list(map(int, stdin.readline().split())))
     for i in range(h):
         for j in range(w):
             if mat[i][j] == 1:
-                count += 1
-                bfs(i, j, count)
-    print(count - 2)
+                bfs(i, j)
+                cnt += 1
+    print(cnt)
