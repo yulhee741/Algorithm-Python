@@ -15,3 +15,4 @@ if h >= 24:
     h -= 24
 
 print(h, totalM)
+
