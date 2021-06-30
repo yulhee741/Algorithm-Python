@@ -18,7 +18,6 @@ for _ in range(oprtN):
             result.append(heapq.heappop(heap)[1])
             
 
-print(heap)
 for i in result:
     print(i)
 

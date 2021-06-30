@@ -14,22 +14,18 @@ for s in list_S:
 for r in list_R:
     team[r-1] += 1
 
-print(team)
-for _ in team:
-    if _ == 0:
-        idx = team.index(_)
-        if idx > 0:
-            if team[idx-1] == 2:
-                team[idx] += 1
-                team[idx-1] -= 1
+for i in range(N):
+    if team[i] == 0: 
+        if i > 0:
+            if team[i-1] == 2:
+                team[i] += 1
+                team[i-1] -= 1
                 continue
-        if idx < N-1:
-            if idx < N-1 and team[idx+1] == 2:
-                team[idx] += 1
-                team[idx+1] -= 1
+        if i < N-1:
+            if team[i+1] == 2:
+                team[i] += 1
+                team[i+1] -= 1
                 continue
-
-print(team)
 
 print(team.count(0))
 
