@@ -10,7 +10,7 @@ def dfs(dx,dy):
         visited[dx][dy] += 1
         if (house[dx][dy] == 1): 
             answer[cnt-1] +=1 
-            if (dx>0): # 왼쪽
+            if (dx>0): #왼쪽 검사
                 if (visited[dx-1][dy]==0):
                     dfs(dx-1,dy)     
             if (dy>0): # 위쪽
