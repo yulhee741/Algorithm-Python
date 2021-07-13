@@ -9,6 +9,5 @@ result = []
 for i in range(N-1, -1, -1):
     result.insert(line[i], i+1)
 
-
 print(*result)
     
