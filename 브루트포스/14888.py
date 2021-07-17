@@ -11,6 +11,7 @@ op=''
 for idx,val in enumerate(ops):
     op += str(idx) * val
 
+
 op = list(map(int,op))
 result=[]
 

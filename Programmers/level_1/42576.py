@@ -2,19 +2,13 @@
 
 def solution(participant, completion):
     answer = ''
-    hash = {}
-    for p in participant:
-        if p in hash.keys():
-            hash[p] += 1
-        else:
-            hash[p] = 1
-            
-    for c in completion:
-        if c in hash.keys():
-            hash[c] -= 1
-    
-    for i in hash.keys():
-        if hash[i] != 0:
-            answer = i
-            
+    temp = 0
+    dic = {}
+    for part in participant:
+        dic[hash(part)] = part
+        temp += int(hash(part))
+    for com in completion:
+        temp -= hash(com)
+    answer = dic[temp]
+
     return answer
