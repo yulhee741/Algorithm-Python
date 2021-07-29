@@ -25,11 +25,8 @@ for now_op in set(permutations(op,len(op))):
         elif now_op[idx] == 2:
             res *= nums[idx + 1]
         elif now_op[idx] == 3:
-            if res > 0:
-                res = res//nums[idx + 1]
-            else:
-                res = ((res*-1)//nums[idx + 1])*-1	
-            # 음수 나누기 조심해야함. ex) -1/3
+            res = int(res/nums[idx + 1])
+            
     result.append(res)
 
 print(max(result))

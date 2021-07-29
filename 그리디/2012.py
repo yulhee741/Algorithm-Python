@@ -11,7 +11,6 @@ result = 0
 for i in range(N):
     if score[i] != i+1: # 리스트에 해당 번째 인덱스가 등수와 다를경우 
         result += abs(score[i]-(i+1)) # 차이를 구하여 결과에 저장
-        score[i] = i+1
 
 print(result)
 
