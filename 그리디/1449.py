@@ -13,4 +13,3 @@ for point in points:
         cnt += 1
 
 print(cnt)
-

@@ -12,7 +12,7 @@ dx = [-2, -2, 0, 0, 2, 2]
 dy = [-1, 1, -2, 2, -1, 1]
 
 
-def dfs(a, b):
+def bfs(a, b):
     graph[a][b] = 1
     visited[a][b] = 1
 
@@ -38,5 +38,5 @@ def dfs(a, b):
             q.append((nx,ny))
 
 
-dfs(x, y)
+bfs(x, y)
 print(graph[endx][endy]-1)
