@@ -1,32 +1,27 @@
-from collections import deque
-
 N, M = map(int, input().split())
+maze = [list(input()) for _ in range(N)]
 
-graph = [list(map(int, input())) for _ in range(N)]
-count_graph = [[0]*M for _ in range(N)]
-visited = [[False]*M for _ in range(N)]
+visited = [[0]*M for _ in range(N)]
 
-queue = [[0, 0]]
-visited[0][0] = True
-count_graph[0][0] = 1
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
 
-dy = [-1, 1, 0, 0]
-dx = [0, 0, -1, 1]
+def bfs(x, y):
 
-while queue:
-    y, x = queue.pop(0)
+    visited[0][0] = 1
+    queue = [(0,0)]
 
-    if x == M and y == N:
-        break
+    while queue:
+        now = queue.pop(0)
+        for i in range(4):
+            nx = now[0] + dx[i]
+            ny = now[1] + dy[i]
 
-    for i in range(4):
-        nX = x + dx[i]
-        nY = y + dy[i]
+            if (0 <= nx < N) and (0 <= ny < M):
+                if visited[nx][ny] == 0 and maze[nx][ny] == '1':
+                    visited[nx][ny] == visited[now[0]][now[1]] + 1
+                    queue.append((nx,ny))
+                    
+    return visited[-1][-1]
 
-        if 0 <= nX < M and 0 <= nY < N:
-            if graph[nY][nX] == 1 and not visited[nY][nX]:
-                visited[nY][nX] = True
-                queue.append([nY, nX])
-                count_graph[nY][nX] += count_graph[y][x] + 1
-
-print(count_graph[N-1][M-1])
+print(bfs(0,0))
