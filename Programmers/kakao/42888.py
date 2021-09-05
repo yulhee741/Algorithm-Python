@@ -1,4 +1,4 @@
-# 오픈 채팅방 (10분)
+# 오픈 채팅방 (8분)
 
 def solution(record):
     answer = []
