@@ -1,4 +1,4 @@
-# 효율적인 해킹
+# 효율적인 해킹!
 from sys import stdin
 from collections import deque
 
