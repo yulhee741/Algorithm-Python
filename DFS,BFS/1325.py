@@ -26,7 +26,6 @@ def bfs(i):
                 cnt += 1
     return cnt
 
-
 mx = 0
 result = []
 for i in range(1, n+1):
