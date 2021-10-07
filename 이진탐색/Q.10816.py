@@ -12,3 +12,5 @@ for c in check:
         print(next-i, end=' ')
     else:
         print(0, end=' ')
+
+        
