@@ -12,7 +12,6 @@ def go(index, n, m):
         go(index+1, n, m)
         arr.pop()
 
-
 n, m = map(int, input().split())
 arr=[]
 
