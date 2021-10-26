@@ -7,8 +7,8 @@ meeting = []
 for _ in range(n):
     a, b = map(int, stdin.readline().split())
     meeting.append((a,b))
-
-meeting.sort()
+ 
+meeting.sort() 
 meeting.sort(key=lambda x:x[1])
 
 start, end = meeting[0]
