@@ -1,7 +1,8 @@
+# 외계인의 기타 연주
 from sys import stdin
 
 N, P = map(int, stdin.readline().split())
-stack = [[0] for _ in range(7)] #1번 ~6번 줄 만큼 스택 만들기
+stack = [[0] for _ in range(7)]
 cnt = 0
 
 for _ in range(N):
