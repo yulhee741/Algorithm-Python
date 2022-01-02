@@ -29,4 +29,4 @@ while True:
         print()
 
     if all(visited):
-        break
+        break 
