@@ -18,3 +18,4 @@ def DFS(left, right):
     DFS(left, min_idx)
 
 DFS(0, len(ss))
+
